@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Logo } from "@/src/shared/ui/logo";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -24,6 +25,13 @@ const navLinks = [
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const router = useRouter();
+
+  const handleLogout = () => {
+    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("loginProvider");
+    router.push("/login");
+  };
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/80">
@@ -79,7 +87,10 @@ export function Header() {
                 구독 관리
               </DropdownMenuItem>
               <DropdownMenuSeparator />
-              <DropdownMenuItem className="gap-2 text-destructive focus:text-destructive">
+              <DropdownMenuItem 
+                className="gap-2 text-destructive focus:text-destructive cursor-pointer"
+                onClick={handleLogout}
+              >
                 <LogOut className="h-4 w-4" />
                 로그아웃
               </DropdownMenuItem>
@@ -119,7 +130,14 @@ export function Header() {
                   ))}
                 </nav>
                 <div className="border-t border-border pt-4">
-                  <Button variant="ghost" className="w-full justify-start text-destructive hover:text-destructive hover:bg-destructive/5 gap-2">
+                  <Button 
+                    variant="ghost" 
+                    className="w-full justify-start text-destructive hover:text-destructive hover:bg-destructive/5 gap-2"
+                    onClick={() => {
+                      handleLogout();
+                      setOpen(false);
+                    }}
+                  >
                     <LogOut className="h-4 w-4" />
                     로그아웃
                   </Button>

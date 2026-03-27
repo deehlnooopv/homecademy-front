@@ -1,23 +1,21 @@
-import { Header } from "@/src/widgets/header";
-import { Footer } from "@/src/widgets/footer";
-import { HeroSection } from "@/src/widgets/hero";
-import { ChildrenSummary } from "@/src/widgets/children-summary";
-import { QuickMenu } from "@/src/widgets/quick-menu";
-import { NewsSection } from "@/src/widgets/news-section";
+"use client";
+
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 export default function HomePage() {
-  return (
-    <div className="min-h-screen flex flex-col bg-background">
-      <Header />
-      <main className="flex-1">
-        <div className="container px-4 py-8 md:py-10 space-y-10">
-          <HeroSection />
-          <ChildrenSummary />
-          <QuickMenu />
-          <NewsSection />
-        </div>
-      </main>
-      <Footer />
-    </div>
-  );
+  const router = useRouter();
+
+  useEffect(() => {
+    // 로그인 상태 확인 (나중에 실제 인증 로직으로 변경 필요)
+    const isLoggedIn = typeof window !== "undefined" && localStorage.getItem("isLoggedIn");
+    
+    if (isLoggedIn) {
+      router.push("/dashboard");
+    } else {
+      router.push("/login");
+    }
+  }, [router]);
+
+  return null;
 }
