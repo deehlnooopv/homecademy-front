@@ -113,17 +113,18 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#FFF8F3] via-[#FFF5E6] to-[#FFF9F0]">
-      {/* 왼쪽 상단 로고 */}
-      <div className="absolute top-6 left-6 lg:top-8 lg:left-8 z-10">
-        <Logo size="lg" />
-      </div>
-
       <div className="flex flex-col lg:flex-row items-stretch justify-stretch min-h-screen">
         {/* 왼쪽: 이미지 및 홍보 문구 섹션 */}
-        <div className="w-full lg:w-1/2 flex flex-col items-center justify-center px-4 py-8 sm:px-6 sm:py-12 lg:p-12 order-2 lg:order-1">
-          <div className="w-full max-w-md space-y-8">
-            {/* 홍보 문구 - 이미지 위에 배치 */}
-            <div className="space-y-4">
+        <div className="w-full lg:w-1/2 flex flex-col px-4 py-8 sm:px-6 sm:py-12 lg:p-12 order-2 lg:order-1">
+          {/* 로고 */}
+          <div className="mb-8">
+            <Logo size="lg" />
+          </div>
+          
+          <div className="flex flex-col items-center justify-center flex-1">
+            <div className="w-full max-w-md space-y-8">
+              {/* 홍보 문구 - 이미지 위에 배치 */}
+              <div className="space-y-4">
               <h2 className="text-2xl sm:text-3xl font-bold text-[#1a1a1a]">
                 부모의 지도하에<br />함께 성장하는<br />AI 교육 팀
               </h2>
@@ -146,7 +147,7 @@ export default function LoginPage() {
         </div>
 
         {/* 오른쪽: 로그인 폼 섹션 */}
-        <div className="w-full lg:w-1/2 flex flex-col items-center justify-center px-4 py-8 sm:px-6 sm:py-12 lg:p-12 order-1 lg:order-2 lg:pt-24">
+        <div className="w-full lg:w-1/2 flex flex-col items-center justify-center px-4 py-8 sm:px-6 sm:py-12 lg:p-12 order-1 lg:order-2">
           <div className="w-full max-w-md space-y-8">
             {/* 인사말 */}
             <div className="space-y-3 text-center">
