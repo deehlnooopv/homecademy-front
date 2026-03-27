@@ -81,22 +81,25 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#FFF8F3] via-[#FFF5E6] to-[#FFF9F0] relative">
-      <div className="absolute top-6 left-6 lg:top-8 lg:left-8 z-10">
-        <div className="scale-75 origin-top-left">
-          <Logo size="sm" />
-        </div>
-      </div>
-
+    <div className="min-h-screen bg-gradient-to-br from-[#FFF8F3] via-[#FFF5E6] to-[#FFF9F0]">
       <div className="flex flex-col items-center justify-center min-h-screen px-4 py-8">
         <div className="w-full max-w-md space-y-8">
-          <div className="space-y-4">
+          <div className="space-y-6">
+            <div className="flex justify-center">
+              <div className="scale-50">
+                <Logo size="lg" />
+              </div>
+            </div>
+
             <Button
               className="w-full h-12 sm:h-14 rounded-lg font-semibold text-sm sm:text-base bg-[#FF8A5B] hover:bg-[#FF7A45] text-white transition-all duration-200"
               variant="ghost"
             >
               {TEXT.childCodeLogin}
             </Button>
+          </div>
+
+          <div className="space-y-4">
 
             <div className="flex items-center gap-3">
               <div className="flex-1 h-px bg-gray-300"></div>
