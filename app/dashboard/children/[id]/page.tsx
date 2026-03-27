@@ -76,13 +76,10 @@ export default function ChildDetailPage() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    console.log('[v0] Detail page mounted, params:', params);
-    console.log('[v0] ID from params:', params.id);
     setIsLoading(false);
   }, [params]);
 
   const handleNavigateToCourse = (courseId: string) => {
-    console.log('[v0] Navigating to course:', courseId);
     router.push(`/dashboard/course/${courseId}`);
   };
 
@@ -104,7 +101,6 @@ export default function ChildDetailPage() {
             <h1 className="text-3xl font-bold text-gray-900">{child.name}</h1>
             <p className="text-gray-600">{child.age} years old • Learning Analysis</p>
           </div>
-        </div>
         </div>
 
         {/* Skill Chart */}
