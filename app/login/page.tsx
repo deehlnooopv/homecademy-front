@@ -83,17 +83,13 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#FFF8F3] via-[#FFF5E6] to-[#FFF9F0] relative">
       <div className="absolute top-6 left-6 lg:top-8 lg:left-8 z-10">
-        <Logo size="lg" />
+        <div className="scale-75 origin-top-left">
+          <Logo size="sm" />
+        </div>
       </div>
 
       <div className="flex flex-col items-center justify-center min-h-screen px-4 py-8">
         <div className="w-full max-w-md space-y-8">
-          <div className="space-y-3 text-center">
-            <h1 className="text-4xl font-bold text-[#1a1a1a]">
-              {TEXT.welcome}
-            </h1>
-          </div>
-
           <div className="space-y-4">
             <Button
               className="w-full h-12 sm:h-14 rounded-lg font-semibold text-sm sm:text-base bg-[#FF8A5B] hover:bg-[#FF7A45] text-white transition-all duration-200"
