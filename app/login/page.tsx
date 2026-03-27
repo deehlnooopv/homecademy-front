@@ -5,9 +5,13 @@ import { useRouter } from 'next/navigation';
 import { Logo } from '@/components/logo';
 import { Button } from '@/components/ui/button';
 
-const welcomeText = '만나서 반갑습니다!';
-const loginPromptText = '간편하게 로그인하세요';
-const termsText = '로그인하면 이용약관과 개인정보 처리방침에 동의하게 됩니다';
+const TEXT = {
+  welcome: 'Welcome',
+  childCodeLogin: 'Login with Child Code',
+  or: 'or',
+  socialLogin: 'Social Login',
+  terms: 'By logging in, you agree to our Terms and Privacy Policy',
+};
 
 const socialButtons = [
   {
@@ -25,11 +29,7 @@ const socialButtons = [
   {
     name: 'Naver',
     id: 'naver',
-    icon: (
-      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9h-3V8.5h-1v6h1v-3h3v3h1v-6h-1v2.5z" />
-      </svg>
-    ),
+    icon: <span className="text-lg font-bold">N</span>,
     bgColor: 'bg-[#00C73C]',
     textColor: 'text-white',
     hoverColor: 'hover:bg-[#00B530]',
@@ -55,7 +55,7 @@ const socialButtons = [
     id: 'apple',
     icon: (
       <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <path d="M17.05 13.5c-.91 2.18-.41 4.85 1.54 6.5 1.54 1.31 3.84.74 4.88-.74.5-.75.73-1.73.66-2.74-.32.06-.64.09-.97.09-2.53 0-4.68-1.66-5.11-4.11zm-5.28-3.92c1.85-1.11 4.05-1.33 5.96-.8.39-1.41.44-2.92.08-4.4C15.5.5 13.08-1.22 10.56.22c-.42.25-.78.58-1.08.96-1.06 1.45-1.35 3.56-.55 5.46zm4.15-7.42c1.51.15 2.84 1.08 3.5 2.3.26-.08.51-.14.77-.18 1.34-.2 2.68.12 3.83 1.01-.7-1.65-2.1-2.98-3.8-3.47-1.33-.38-2.75-.32-4.1.1-.06.09-.1.19-.2.24zM5.3 6.28c-1.43 0-2.6 1.17-2.6 2.6 0 1.43 1.17 2.6 2.6 2.6 1.43 0 2.6-1.17 2.6-2.6 0-1.43-1.17-2.6-2.6-2.6z" />
+        <path d="M17.5 1.5c-.5 0-1.5 1-2 1s-1-.5-2-1c-1.5-1-2.5-1.5-4-1.5-3 0-6 2-7 5-.5 1.5-.5 3-.5 4.5 0 3 1 5.5 3 7 .5.5 1 1 1.5 1.5v2c0 1.5 1 2 2 2h.5c.5 0 1 0 1.5.5 1 .5 1.5 1 2.5 1s1.5-.5 2.5-1c.5-.5 1-.5 1.5-.5h.5c1 0 2-.5 2-2v-2c.5-.5 1-1 1.5-1.5 2-1.5 3-4 3-7 0-1.5 0-3-.5-4.5-1-3-4-5-7-5z" />
       </svg>
     ),
     bgColor: 'bg-black',
@@ -66,9 +66,9 @@ const socialButtons = [
 
 export default function LoginPage() {
   const router = useRouter();
-  const [isLoading, setIsLoading] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(null);
 
-  const handleLogin = async (provider: string) => {
+  const handleLogin = async (provider) => {
     setIsLoading(provider);
     try {
       await new Promise((resolve) => setTimeout(resolve, 1000));
@@ -90,13 +90,26 @@ export default function LoginPage() {
         <div className="w-full max-w-md space-y-8">
           <div className="space-y-3 text-center">
             <h1 className="text-4xl font-bold text-[#1a1a1a]">
-              {welcomeText}
+              {TEXT.welcome}
             </h1>
           </div>
 
-          <div className="space-y-3">
+          <div className="space-y-4">
+            <Button
+              className="w-full h-12 sm:h-14 rounded-lg font-semibold text-sm sm:text-base bg-[#FF8A5B] hover:bg-[#FF7A45] text-white transition-all duration-200"
+              variant="ghost"
+            >
+              {TEXT.childCodeLogin}
+            </Button>
+
+            <div className="flex items-center gap-3">
+              <div className="flex-1 h-px bg-gray-300"></div>
+              <p className="text-xs text-[#CCCCCC]">{TEXT.or}</p>
+              <div className="flex-1 h-px bg-gray-300"></div>
+            </div>
+
             <p className="text-sm text-center text-[#666666] font-medium">
-              {loginPromptText}
+              {TEXT.socialLogin}
             </p>
             <div className="grid grid-cols-2 gap-3 sm:gap-4">
               {socialButtons.map((provider) => (
@@ -115,7 +128,7 @@ export default function LoginPage() {
           </div>
 
           <p className="text-xs text-center text-[#999999]">
-            {termsText}
+            {TEXT.terms}
           </p>
         </div>
       </div>
