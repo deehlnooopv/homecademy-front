@@ -112,7 +112,12 @@ export default function LoginPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#FFF8F3] via-[#FFF5E6] to-[#FFF9F0]">
+    <div className="min-h-screen bg-gradient-to-br from-[#FFF8F3] via-[#FFF5E6] to-[#FFF9F0] relative">
+      {/* 우측 상단 로고 */}
+      <div className="absolute top-6 right-6 lg:top-8 lg:right-8 z-10">
+        <Logo size="lg" />
+      </div>
+
       <div className="flex flex-col lg:flex-row items-center justify-center min-h-screen px-4 py-8 lg:py-0">
         {/* 왼쪽: 이미지 섹션 (데스크탑에서만 표시) */}
         <div className="hidden lg:flex w-1/2 items-center justify-center">
@@ -129,19 +134,14 @@ export default function LoginPage() {
 
         {/* 오른쪽: 로그인 폼 섹션 */}
         <div className="w-full lg:w-1/2 flex flex-col items-center justify-center px-6 sm:px-8 lg:px-12">
-          <div className="w-full max-w-md space-y-8">
-            {/* 로고 */}
-            <div className="flex justify-center lg:justify-start">
-              <Logo size="lg" />
-            </div>
-
+          <div className="w-full max-w-md space-y-8 mt-16 lg:mt-0">
             {/* 인사말 및 설명 */}
             <div className="space-y-3 text-center lg:text-left">
               <h1 className="text-4xl font-bold text-[#1a1a1a]">
                 만나서 반갑습니다!
               </h1>
               <p className="text-lg text-[#666666]">
-                AI는 분석하고, 부모는 가르친다
+                부모의 지도하에 함께 성장하는 AI 교육 팀
               </p>
             </div>
 
@@ -153,15 +153,15 @@ export default function LoginPage() {
               <ul className="space-y-2 text-sm text-[#555555]">
                 <li className="flex items-start gap-2">
                   <span className="text-[#FF8A5B] font-bold">•</span>
-                  <span>AI가 자녀의 학습 진도를 분석하고 최적화된 학습 경로를 제안합니다</span>
+                  <span>먼저 자녀의 재능을 찾아주고, AI 선생과 비서가 부모를 도와 효과적인 학습을 이끌어냅니다</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-[#FF8A5B] font-bold">•</span>
-                  <span>부모님을 위한 맞춤형 교육 조언으로 효과적인 학습 지도를 도와줍니다</span>
+                  <span>AI가 학습 데이터를 분석하고 최적화된 학습 경로를 제안합니다</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-[#FF8A5B] font-bold">•</span>
-                  <span>자녀와의 소통을 강화하고 함께 성장하는 경험을 선사합니다</span>
+                  <span>부모님의 지도 아래 자녀와 함께 성장하는 맞춤형 교육 경험을 선사합니다</span>
                 </li>
               </ul>
             </div>
