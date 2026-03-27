@@ -1,18 +1,12 @@
 'use client';
 
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useState, useEffect } from 'react';
+import { useRouter, useParams } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 import { HexagonSkillChart } from '@/components/child-detail/hexagon-skill-chart';
 import { AIRecommendationCard } from '@/components/child-detail/ai-recommendation-card';
 import { SubjectLearningCard } from '@/components/child-detail/subject-learning-card';
-
-interface ChildDetailPageProps {
-  params: {
-    id: string;
-  };
-}
 
 const mockChildData = {
   id: '1',
@@ -75,9 +69,17 @@ const mockChildData = {
   ],
 };
 
-export default function ChildDetailPage({ params }: ChildDetailPageProps) {
+export default function ChildDetailPage() {
   const router = useRouter();
-  const [child] = useState(mockChildData);
+  const params = useParams();
+  const [child, setChild] = useState(mockChildData);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    console.log('[v0] Detail page mounted, params:', params);
+    console.log('[v0] ID from params:', params.id);
+    setIsLoading(false);
+  }, [params]);
 
   const handleNavigateToCourse = (courseId: string) => {
     console.log('[v0] Navigating to course:', courseId);
@@ -102,6 +104,7 @@ export default function ChildDetailPage({ params }: ChildDetailPageProps) {
             <h1 className="text-3xl font-bold text-gray-900">{child.name}</h1>
             <p className="text-gray-600">{child.age} years old • Learning Analysis</p>
           </div>
+        </div>
         </div>
 
         {/* Skill Chart */}
