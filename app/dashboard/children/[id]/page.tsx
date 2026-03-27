@@ -16,61 +16,61 @@ interface ChildDetailPageProps {
 
 const mockChildData = {
   id: '1',
-  name: '김수현',
+  name: 'Kim Suhyun',
   age: 8,
   skills: [
-    { category: '수학', value: 85, fullMark: 100 },
-    { category: '창의력', value: 78, fullMark: 100 },
-    { category: '문제해결', value: 82, fullMark: 100 },
-    { category: '언어능력', value: 88, fullMark: 100 },
-    { category: '사고력', value: 75, fullMark: 100 },
-    { category: '흥미도', value: 90, fullMark: 100 },
+    { category: 'Math', value: 85, fullMark: 100 },
+    { category: 'Creativity', value: 78, fullMark: 100 },
+    { category: 'Problem Solving', value: 82, fullMark: 100 },
+    { category: 'Language', value: 88, fullMark: 100 },
+    { category: 'Thinking', value: 75, fullMark: 100 },
+    { category: 'Interest', value: 90, fullMark: 100 },
   ],
   recommendations: [
     {
       id: 'course-1',
-      title: 'AI와 함께하는 창의수학',
-      description: '수학의 기초를 더욱 탄탄하게 하면서도 창의적 사고를 키울 수 있는 과정입니다.',
-      reason: '수현이의 수학 점수는 매우 우수하지만, 창의력 발전을 위해 문제해결 방식을 다양하게 배우는 것이 좋을 것 같습니다. 이 과정은 논리적 사고와 창의력을 동시에 키울 수 있습니다.',
-      subject: '수학',
-      level: '초급-중급',
+      title: 'Creative Math with AI',
+      description: 'Strengthen math fundamentals while developing creative thinking skills.',
+      reason: 'Suhyun has excellent math scores but would benefit from diverse problem-solving approaches. This course combines logical thinking with creativity.',
+      subject: 'Math',
+      level: 'Beginner-Intermediate',
     },
     {
       id: 'course-2',
-      title: '탐구하는 과학자 프로젝트',
-      description: '실생활 과학 현상을 직접 탐구하며 사고력을 키우는 프로젝트 기반 학습입니다.',
-      reason: '사고력 발전이 필요한 상황이고, 과학을 통한 탐구학습이 이를 크게 도와줄 수 있습니다. 수현이의 높은 흥미도를 고려할 때 좋은 선택이 될 것 같습니다.',
-      subject: '과학',
-      level: '중급',
+      title: 'Science Explorer Project',
+      description: 'Project-based learning exploring real-world science phenomena.',
+      reason: 'Thinking skills need development. Science exploration through inquiry-based learning can help significantly. With high interest levels, this is a great choice.',
+      subject: 'Science',
+      level: 'Intermediate',
     },
   ],
   subjects: [
     {
-      subject: '수학',
+      subject: 'Math',
       progress: 75,
       rating: 85,
-      strengths: ['계산능력', '패턴인식'],
-      weaknesses: ['응용문제'],
-      challenges: ['다단계 문제', '창의적 접근'],
-      nextFocusPoints: '응용문제에 대한 접근 방식을 더 다양하게 배워보는 것이 좋을 것 같습니다. 단순 계산을 넘어 문제의 의도를 파악하고 여러 풀이 방법을 시도하는 연습을 중점으로 진행할 예정입니다.',
+      strengths: ['Calculation', 'Pattern Recognition'],
+      weaknesses: ['Application Problems'],
+      challenges: ['Multi-step Problems', 'Creative Approaches'],
+      nextFocusPoints: 'We will focus on diverse approaches to application problems. Beyond simple calculations, practice identifying problem intent and trying multiple solution methods.',
     },
     {
-      subject: '국어',
+      subject: 'Korean',
       progress: 85,
       rating: 88,
-      strengths: ['독해', '어휘력'],
-      weaknesses: ['창작능력'],
-      challenges: ['글쓰기 표현력'],
-      nextFocusPoints: '이미 독해 능력이 우수한 수현이를 위해 이번엔 창작 능력 개발에 집중할 예정입니다. 다양한 주제로 자신의 감정과 생각을 표현하는 글쓰기 연습을 통해 표현력을 키워나가겠습니다.',
+      strengths: ['Reading', 'Vocabulary'],
+      weaknesses: ['Creative Writing'],
+      challenges: ['Writing Expression'],
+      nextFocusPoints: 'Given Suhyun excellent reading skills, we will focus on developing creative writing. We will improve expression skills through writing practice on various topics.',
     },
     {
-      subject: '영어',
+      subject: 'English',
       progress: 60,
       rating: 72,
-      strengths: ['듣기', '발음'],
-      weaknesses: ['쓰기', '문법'],
-      challenges: ['문장 구조 이해'],
-      nextFocusPoints: '기초 문법 다시 복습하고, 실생활 문장 만들기 연습을 통해 쓰기 능력을 점진적으로 향상시킬 예정입니다. 게임 기반 학습을 통해 동기를 유지하도록 하겠습니다.',
+      strengths: ['Listening', 'Pronunciation'],
+      weaknesses: ['Writing', 'Grammar'],
+      challenges: ['Sentence Structure Understanding'],
+      nextFocusPoints: 'We will review basic grammar and gradually improve writing skills through real-life sentence creation practice. Game-based learning will help maintain motivation.',
     },
   ],
 };
@@ -96,11 +96,11 @@ export default function ChildDetailPage({ params }: ChildDetailPageProps) {
             className="gap-2"
           >
             <ArrowLeft className="w-4 h-4" />
-            돌아가기
+            Back
           </Button>
           <div>
             <h1 className="text-3xl font-bold text-gray-900">{child.name}</h1>
-            <p className="text-gray-600">{child.age}세 • 학습 상세 분석</p>
+            <p className="text-gray-600">{child.age} years old • Learning Analysis</p>
           </div>
         </div>
 
@@ -114,7 +114,7 @@ export default function ChildDetailPage({ params }: ChildDetailPageProps) {
 
         {/* AI Recommendations */}
         <div className="space-y-4">
-          <h2 className="text-2xl font-bold text-gray-900">AI 선생님의 추천 수업</h2>
+          <h2 className="text-2xl font-bold text-gray-900">AI Teachers Recommended Courses</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {child.recommendations.map(rec => (
               <AIRecommendationCard 
@@ -128,7 +128,7 @@ export default function ChildDetailPage({ params }: ChildDetailPageProps) {
 
         {/* Subject Learning Cards */}
         <div className="space-y-4">
-          <h2 className="text-2xl font-bold text-gray-900">과목별 학습 현황</h2>
+          <h2 className="text-2xl font-bold text-gray-900">Subject Learning Status</h2>
           <div className="space-y-4">
             {child.subjects.map(subject => (
               <SubjectLearningCard 

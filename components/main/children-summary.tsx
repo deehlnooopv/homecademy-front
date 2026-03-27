@@ -105,7 +105,7 @@ export function ChildrenSummary() {
                   {child.recentAchievement}
                 </Badge>
                 <Button variant="ghost" size="sm" asChild className="text-primary hover:text-primary hover:bg-primary/5">
-                  <Link href={`/dashboard/children/${child.id}`}>
+                  <Link href={`/dashboard/children/${String(child.id)}`}>
                     상세보기
                     <ChevronRight className="ml-1 h-4 w-4" />
                   </Link>
