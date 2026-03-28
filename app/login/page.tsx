@@ -68,7 +68,7 @@ export default function LoginPage() {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(null);
 
-  const handleLogin = async (provider) => {
+  const handleLogin = async (provider: any) => {
     setIsLoading(provider);
     try {
       await new Promise((resolve) => setTimeout(resolve, 1000));
