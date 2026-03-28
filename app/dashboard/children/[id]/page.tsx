@@ -1,7 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useRouter, useParams } from 'next/navigation';
+import { useParams } from 'next/navigation';
+import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 import { HexagonSkillChart } from '@/components/child-detail/hexagon-skill-chart';
@@ -70,7 +71,6 @@ const mockChildData = {
 };
 
 export default function ChildDetailPage() {
-  const router = useRouter();
   const params = useParams();
   const [child, setChild] = useState(mockChildData);
   const [isLoading, setIsLoading] = useState(true);
@@ -80,7 +80,8 @@ export default function ChildDetailPage() {
   }, [params]);
 
   const handleNavigateToCourse = (courseId: string) => {
-    router.push(`/dashboard/course/${courseId}`);
+    // Navigate to course page - will be implemented later
+    console.log('Navigate to course:', courseId);
   };
 
   return (
@@ -88,15 +89,16 @@ export default function ChildDetailPage() {
       <div className="max-w-6xl mx-auto space-y-8">
         {/* Header */}
         <div className="flex items-center gap-4">
-          <Button 
-            variant="outline" 
-            size="sm" 
-            onClick={() => router.back()}
-            className="gap-2"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Back
-          </Button>
+          <Link href="/dashboard">
+            <Button 
+              variant="outline" 
+              size="sm" 
+              className="gap-2"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              Back
+            </Button>
+          </Link>
           <div>
             <h1 className="text-3xl font-bold text-gray-900">{child.name}</h1>
             <p className="text-gray-600">{child.age} years old • Learning Analysis</p>
