@@ -89,8 +89,8 @@ export function HexagonSkillChart({ data, childName }: HexagonSkillChartProps) {
       </div>
 
       {/* 레이더 차트 */}
-      <div className="relative z-10">
-        <ResponsiveContainer width="100%" height={340}>
+      <div className="relative z-10 h-96">
+        <ResponsiveContainer width="100%" height="70%">
           <RadarChart data={data} margin={{ top: 24, right: 70, left: 70, bottom: 24 }}>
             <PolarGrid stroke="rgba(255,255,255,0.15)" strokeWidth={1} />
             <PolarAngleAxis
