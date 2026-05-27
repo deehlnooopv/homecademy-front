@@ -20,3 +20,37 @@ export interface ChildLearningStats {
   completedLessons: number;
   achievements: string[];
 }
+
+export interface SkillData {
+  category: string;
+  value: number;
+  fullMark: number;
+}
+
+export interface Recommendation {
+  id: string;
+  title: string;
+  description: string;
+  reason: string;
+  subject: string;
+  level: string;
+}
+
+export interface SubjectCard {
+  subject: string;
+  progress: number;
+  rating: number;
+  strengths: string[];
+  weaknesses: string[];
+  challenges: string[];
+  nextFocusPoints: string;
+}
+
+export interface ChildDetail {
+  id: string;
+  name: string;
+  age: number;
+  skills: SkillData[];
+  recommendations: Recommendation[];
+  subjects: SubjectCard[];
+}

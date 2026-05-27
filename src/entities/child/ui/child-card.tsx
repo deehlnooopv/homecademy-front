@@ -1,11 +1,11 @@
 "use client";
 
-import { Card, CardContent } from "@/components/ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Progress } from "@/components/ui/progress";
-import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/src/shared/ui/card";
+import { Avatar, AvatarFallback, AvatarImage } from "@/src/shared/ui/avatar";
+import { Progress } from "@/src/shared/ui/progress";
+import { Badge } from "@/src/shared/ui/badge";
 import { Clock, Flame, Star, ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/src/shared/ui/button";
 import Link from "next/link";
 import type { Child } from "../model/types";
 

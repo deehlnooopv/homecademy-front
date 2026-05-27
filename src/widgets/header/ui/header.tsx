@@ -4,8 +4,8 @@ import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Logo } from "@/src/shared/ui/logo";
-import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Button } from "@/src/shared/ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "@/src/shared/ui/sheet";
 import { Menu, Bell, User, LogOut, Settings, Users } from "lucide-react";
 import {
   DropdownMenu,
@@ -13,8 +13,8 @@ import {
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+} from "@/src/shared/ui/dropdown-menu";
+import { Avatar, AvatarFallback, AvatarImage } from "@/src/shared/ui/avatar";
 
 const navLinks = [
   { href: "/dashboard", label: "대시보드" },
