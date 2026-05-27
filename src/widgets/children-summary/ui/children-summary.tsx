@@ -1,11 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
-import { Progress } from "@/components/ui/progress";
-import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/src/shared/ui/card";
+import { Avatar, AvatarFallback, AvatarImage } from "@/src/shared/ui/avatar";
+import { Badge } from "@/src/shared/ui/badge";
+import { Progress } from "@/src/shared/ui/progress";
+import { Button } from "@/src/shared/ui/button";
 import { ChevronRight, Star, TrendingUp, Clock, Sparkles } from "lucide-react";
 
 const children = [

@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/src/shared/ui/card";
+import { Badge } from "@/src/shared/ui/badge";
+import { Button } from "@/src/shared/ui/button";
 import { ChevronRight, Clock, TrendingUp, Lightbulb, Bell } from "lucide-react";
 
 const newsItems = [
