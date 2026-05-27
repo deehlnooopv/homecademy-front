@@ -50,6 +50,12 @@ export interface ChildDetail {
   id: string;
   name: string;
   age: number;
+  grade?: string;
+  level?: number;
+  streak?: number;
+  totalScore?: number;
+  weeklyGrowth?: number;
+  rank?: number;
   skills: SkillData[];
   recommendations: Recommendation[];
   subjects: SubjectCard[];
