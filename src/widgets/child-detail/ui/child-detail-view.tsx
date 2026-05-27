@@ -6,7 +6,7 @@ import { AIRecommendationCard } from '@/src/entities/child/ui/ai-recommendation-
 import { Badge } from '@/src/shared/ui/badge';
 import { Button } from '@/src/shared/ui/button';
 import { Separator } from '@/src/shared/ui/separator';
-import { ArrowLeft, Trophy, Flame, Star, TrendingUp, BookOpen, Sparkles, Crown } from 'lucide-react';
+import { ArrowLeft, Trophy, Flame, Star, TrendingUp, BookOpen, Sparkles, Crown, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 import type { ChildDetail } from '@/src/entities/child/model/types';
 
@@ -143,6 +143,39 @@ export function ChildDetailView({ child, onNavigateToCourse }: ChildDetailViewPr
             ))}
           </div>
         </section>
+
+        {/* AI 성장 분석 리포트 섹션 */}
+        <>
+          <Separator />
+          <section className="space-y-4">
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center">
+                <Sparkles className="w-4 h-4 text-accent" />
+              </div>
+              <h2 className="text-xl font-extrabold text-foreground">AI 성장 분석 리포트</h2>
+            </div>
+            <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-violet-500 to-purple-600 p-5 text-white shadow-lg">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/3" />
+              <div className="relative z-10">
+                <p className="text-sm text-white/90 font-medium mb-1">데이터가 읽어주는 {child.name}의 가능성</p>
+                <p className="text-white/75 text-xs leading-relaxed mb-4">
+                  AI가 분석한 {child.name}만의 고유한 재능과 성장 스토리를 확인해보세요.
+                  발견된 재능, 과정 중심 분석, 부모 대화 가이드까지 제공합니다.
+                </p>
+                <Button
+                  asChild
+                  className="bg-white text-violet-700 hover:bg-white/90 font-bold text-sm h-9 px-5 shadow-md"
+                >
+                  <Link href={`/dashboard/ai-report/${child.id}`} className="flex items-center gap-2">
+                    <Sparkles className="w-4 h-4" />
+                    AI 분석 리포트 보기
+                    <ChevronRight className="w-4 h-4" />
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </section>
+        </>
 
         {/* AI 추천 섹션 */}
         {child.recommendations && child.recommendations.length > 0 && (

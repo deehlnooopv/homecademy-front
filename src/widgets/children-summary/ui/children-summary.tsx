@@ -55,18 +55,33 @@ const CHILDREN_DATA = [
  * - 각 자녀의 오늘 학습 진도, 연속 학습 일수, 강점 재능 표시
  * - 과목별 진도 미니 바 차트 포함
  * - 상세보기 링크로 자녀 상세 페이지 이동
+ * - AI 분석 보기 버튼으로 AI 리포트 페이지 이동
  */
 export function ChildrenSummary() {
   return (
     <section>
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-lg font-bold text-foreground">우리 아이 현황</h2>
-        <Button variant="ghost" size="sm" asChild className="text-muted-foreground hover:text-foreground text-xs h-7 px-2">
-          <Link href="/children" className="flex items-center gap-1">
-            전체보기
-            <ChevronRight className="h-3.5 w-3.5" />
-          </Link>
-        </Button>
+        <div className="flex items-center gap-2">
+          {/* AI 분석 보기 버튼 */}
+          <Button
+            variant="outline"
+            size="sm"
+            asChild
+            className="h-7 text-xs border-accent/30 text-accent hover:bg-accent/5 hover:text-accent hover:border-accent/50 gap-1.5"
+          >
+            <Link href="/dashboard/ai-report" className="flex items-center gap-1">
+              <Sparkles className="h-3.5 w-3.5" />
+              AI 분석 보기
+            </Link>
+          </Button>
+          <Button variant="ghost" size="sm" asChild className="text-muted-foreground hover:text-foreground text-xs h-7 px-2">
+            <Link href="/children" className="flex items-center gap-1">
+              전체보기
+              <ChevronRight className="h-3.5 w-3.5" />
+            </Link>
+          </Button>
+        </div>
       </div>
 
       <div className="grid gap-4 md:grid-cols-2">
@@ -151,17 +166,31 @@ export function ChildrenSummary() {
                     {child.recentAchievement}
                   </Badge>
                 </div>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  asChild
-                  className="h-7 text-xs text-primary hover:text-primary hover:bg-primary/5 px-2 group-hover:bg-primary/5"
-                >
-                  <Link href={`/dashboard/children/${child.id}`} className="flex items-center gap-1">
-                    상세보기
-                    <ChevronRight className="h-3.5 w-3.5" />
-                  </Link>
-                </Button>
+                <div className="flex items-center gap-1">
+                  {/* AI 분석 버튼 (카드 내) */}
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    asChild
+                    className="h-7 text-[11px] text-accent hover:text-accent hover:bg-accent/5 px-2"
+                  >
+                    <Link href={`/dashboard/ai-report/${child.id}`} className="flex items-center gap-0.5">
+                      <Sparkles className="h-3 w-3" />
+                      AI 분석
+                    </Link>
+                  </Button>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    asChild
+                    className="h-7 text-xs text-primary hover:text-primary hover:bg-primary/5 px-2 group-hover:bg-primary/5"
+                  >
+                    <Link href={`/dashboard/children/${child.id}`} className="flex items-center gap-1">
+                      상세보기
+                      <ChevronRight className="h-3.5 w-3.5" />
+                    </Link>
+                  </Button>
+                </div>
               </div>
             </CardContent>
           </Card>
