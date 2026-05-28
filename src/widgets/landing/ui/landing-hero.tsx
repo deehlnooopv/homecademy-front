@@ -45,9 +45,8 @@ export function LandingHero() {
               아이의 재능을
               <br />
               <span className="bg-gradient-to-r from-[#FF6B35] via-amber-400 to-[#FF6B35] bg-clip-text text-transparent">
-                진지하게
-              </span>{' '}
-              발견하세요
+                찾아주세요
+              </span>
             </h1>
             <p className="text-xl md:text-2xl text-white/70 font-medium leading-relaxed max-w-2xl mx-auto">
               부모님이 교육 리더가 되어 AI 선생님들을 직접 배치하세요.
