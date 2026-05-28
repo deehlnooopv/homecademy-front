@@ -2,11 +2,23 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { Logo } from "@/src/shared/ui/logo";
 import { Button } from "@/src/shared/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/src/shared/ui/sheet";
-import { Menu, Bell, User, LogOut, Settings, Users, ChevronDown } from "lucide-react";
+import {
+  Menu,
+  Bell,
+  User,
+  LogOut,
+  Settings,
+  Users,
+  ChevronDown,
+  LayoutDashboard,
+  BookOpen,
+  Sparkles,
+  BarChart3,
+} from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -18,10 +30,10 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/src/shared/ui/avatar";
 
 /** 헤더 네비게이션 링크 목록 */
 const NAV_LINKS = [
-  { label: "대시보드", href: "/dashboard" },
-  { label: "학습 관리", href: "/learning" },
-  { label: "AI 분석", href: "/analysis" },
-  { label: "성장 리포트", href: "/reports" },
+  { label: "대시보드", href: "/dashboard", icon: LayoutDashboard },
+  { label: "학습 관리", href: "/learning", icon: BookOpen },
+  { label: "AI 분석", href: "/dashboard/ai-report", icon: Sparkles },
+  { label: "성장 리포트", href: "/reports", icon: BarChart3 },
 ] as const;
 
 /**
@@ -29,10 +41,20 @@ const NAV_LINKS = [
  * - 로고, 네비게이션 링크, 알림, 사용자 메뉴 포함
  * - 모바일: 햄버거 메뉴로 슬라이드 패널 표시
  * - 데스크탑: 인라인 네비게이션 + 드롭다운 메뉴
+ * - 현재 경로에 해당하는 메뉴 항목 활성화 표시
  */
 export function Header() {
   const router = useRouter();
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+
+  /** 현재 경로가 해당 링크와 일치하는지 확인 */
+  const isActive = (href: string) => {
+    if (href === "/dashboard") {
+      return pathname === "/dashboard";
+    }
+    return pathname.startsWith(href);
+  };
 
   /** 로그아웃 처리 */
   const handleLogout = () => {
@@ -55,8 +77,13 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/60 rounded-lg transition-all duration-150"
+              className={`flex items-center gap-1.5 px-3 py-2 text-sm font-medium rounded-lg transition-all duration-150 ${
+                isActive(link.href)
+                  ? "text-foreground bg-muted/80"
+                  : "text-muted-foreground hover:text-foreground hover:bg-muted/60"
+              }`}
             >
+              <link.icon className="h-3.5 w-3.5" />
               {link.label}
             </Link>
           ))}
@@ -138,9 +165,29 @@ export function Header() {
                         key={link.href}
                         href={link.href}
                         onClick={() => setIsOpen(false)}
-                        className="flex items-center px-3 py-2.5 text-sm font-medium text-foreground hover:bg-muted/60 rounded-xl transition-colors"
+                        className={`flex items-center gap-3 px-3 py-2.5 text-sm font-medium rounded-xl transition-colors ${
+                          isActive(link.href)
+                            ? "text-primary bg-primary/8 font-semibold"
+                            : "text-foreground hover:bg-muted/60"
+                        }`}
                       >
+                        <div
+                          className={`w-8 h-8 rounded-lg flex items-center justify-center ${
+                            isActive(link.href)
+                              ? "bg-primary/15"
+                              : "bg-muted/60"
+                          }`}
+                        >
+                          <link.icon
+                            className={`h-4 w-4 ${
+                              isActive(link.href) ? "text-primary" : "text-muted-foreground"
+                            }`}
+                          />
+                        </div>
                         {link.label}
+                        {isActive(link.href) && (
+                          <span className="ml-auto w-1.5 h-1.5 rounded-full bg-primary" />
+                        )}
                       </Link>
                     ))}
                   </nav>
