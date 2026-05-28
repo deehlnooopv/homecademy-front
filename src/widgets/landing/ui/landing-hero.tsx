@@ -45,7 +45,7 @@ export function LandingHero() {
               아이의 재능을
               <br />
               <span className="bg-gradient-to-r from-[#FF6B35] via-amber-400 to-[#FF6B35] bg-clip-text text-transparent">
-                게임처럼
+                진지하게
               </span>{' '}
               찾아주세요
             </h1>

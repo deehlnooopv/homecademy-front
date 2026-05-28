@@ -16,7 +16,7 @@ import { getSocialIcon } from './social-icon';
  */
 const FEATURE_BADGES = [
   { icon: Brain, label: 'AI 재능 분석' },
-  { icon: Trophy, label: '게임형 학습' },
+  { icon: Trophy, label: '성장 동기 설계' },
   { icon: Sparkles, label: '맞춤 커리큘럼' },
 ] as const;
 
