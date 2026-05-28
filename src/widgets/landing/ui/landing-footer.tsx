@@ -19,7 +19,7 @@ export function LandingFooter() {
             <Logo size="md" />
             <p className="text-sm leading-relaxed max-w-xs">
               부모님이 교육 리더가 되어 AI 선생님들을 배치하는 새로운 방식의 홈스쿨링 플랫폼입니다.
-              아이의 재능을 게임처럼 발견하세요.
+              아이의 재능을 진지하게 발견하세요.
             </p>
             <p className="text-xs text-white/30">
               © 2025 홈카데미. All rights reserved.

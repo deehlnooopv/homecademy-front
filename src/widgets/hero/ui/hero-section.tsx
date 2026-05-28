@@ -64,8 +64,11 @@ export function HeroSection() {
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
-              <Button variant="outline" className="border-primary/20 hover:bg-primary/5">
-                AI 분석 보기
+              <Button variant="outline" asChild className="border-primary/20 hover:bg-primary/5">
+                <Link href="/dashboard/ai-report" className="flex items-center gap-1.5">
+                  <Sparkles className="h-4 w-4" />
+                  AI 분석 보기
+                </Link>
               </Button>
             </div>
           </div>

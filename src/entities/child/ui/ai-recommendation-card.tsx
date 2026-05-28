@@ -6,7 +6,7 @@ import type { Recommendation } from '../model/types';
 
 interface AIRecommendationCardProps {
   recommendation: Recommendation;
-  onNavigate: (courseId: string) => void;
+  onNavigate?: (courseId: string) => void;
 }
 
 export function AIRecommendationCard({ recommendation, onNavigate }: AIRecommendationCardProps) {
@@ -34,7 +34,7 @@ export function AIRecommendationCard({ recommendation, onNavigate }: AIRecommend
       </div>
 
       <Button 
-        onClick={() => onNavigate(recommendation.id)}
+        onClick={() => onNavigate?.(recommendation.id)}
         className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-semibold gap-2"
       >
         수업 듣기

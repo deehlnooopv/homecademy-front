@@ -27,7 +27,7 @@ const FEATURES = [
   {
     icon: Sparkles,
     title: 'AI 재능 발굴 시스템',
-    description: '6가지 핵심 역량(논리력·창의력·언어력·사회성·예술성·체육)을 AI가 실시간 분석합니다. 아이만의 숨겨진 재능을 게임처럼 발견하세요.',
+    description: '6가지 핵심 역량(논리력·창의력·언어력·사회성·예술성·체육)을 AI가 실시간 분석합니다. 데이터에 기반한 정밀한 분석으로 아이만의 고유한 재능을 발견합니다.',
     badge: 'AI 분석',
     gradient: 'from-violet-400 to-purple-600',
     bg: 'bg-violet-50',
@@ -53,9 +53,9 @@ const FEATURES = [
   },
   {
     icon: Trophy,
-    title: '게임형 학습 동기',
-    description: '레벨업, 배지, 연속 학습 스트릭 등 게임 요소로 아이가 스스로 공부하고 싶어지는 환경을 만들어드립니다. 학습이 즐거운 모험이 됩니다.',
-    badge: '게임화',
+    title: '성장 동기 설계',
+    description: '단계별 달성 목표와 지속적인 피드백으로 아이가 스스로 학습에 동기를 갖도록 돕습니다. 작은 성취의 연속이 진정한 성장으로 이어집니다.',
+    badge: '성장 설계',
     gradient: 'from-rose-400 to-pink-600',
     bg: 'bg-rose-50',
     color: 'text-rose-600',
