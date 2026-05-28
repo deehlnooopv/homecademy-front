@@ -18,7 +18,7 @@ const FEATURES = [
   {
     icon: Crown,
     title: '부모가 교육 리더',
-    description: '아이의 학습 방향을 부모님이 직접 설계하세요. AI 선생님들을 원하는 과목에 배치하고 커리큘럼을 만들어가는 교육 디렉터가 되어보세요.',
+    description: '아이의 학습 방향을 부모님이 직접 설계하세요. AI 부모님들을 원하는 과목에 배치하고 커리큘럼을 만들어가는 교육 디렉터가 되어보세요.',
     badge: '핵심 기능',
     gradient: 'from-amber-400 to-orange-500',
     bg: 'bg-amber-50',
@@ -27,7 +27,7 @@ const FEATURES = [
   {
     icon: Sparkles,
     title: 'AI 재능 발굴 시스템',
-    description: '6가지 핵심 역량(논리력·창의력·언어력·사회성·예술성·체육)을 AI가 실시간 분석합니다. 아이만의 숨겨진 재능을 게임처럼 발견하세요.',
+    description: '6가지 핵심 역량(논리력·창의력·언어력·사회성·예술성·체육)을 AI가 실시간 분석합니다. 아이만의 숨겨진 재능을 게임처럼 찾아주세요.',
     badge: 'AI 분석',
     gradient: 'from-violet-400 to-purple-600',
     bg: 'bg-violet-50',
@@ -44,8 +44,8 @@ const FEATURES = [
   },
   {
     icon: Users,
-    title: 'AI 선생님 매칭',
-    description: '아이의 성향과 학습 스타일에 맞는 AI 선생님을 자동으로 매칭합니다. 수학, 국어, 영어, 코딩 등 다양한 분야의 전문 AI 교사가 대기 중입니다.',
+    title: 'AI 부모님 매칭',
+    description: '아이의 성향과 학습 스타일에 맞는 AI 부모님을 자동으로 매칭합니다. 수학, 국어, 영어, 코딩 등 다양한 분야의 전문 AI 교사가 대기 중입니다.',
     badge: '맞춤 매칭',
     gradient: 'from-emerald-400 to-teal-600',
     bg: 'bg-emerald-50',

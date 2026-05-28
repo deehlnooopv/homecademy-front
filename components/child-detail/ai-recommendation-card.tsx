@@ -35,7 +35,7 @@ export function AIRecommendationCard({ recommendation, onNavigate }: AIRecommend
       </p>
 
       <div className="bg-white rounded-lg p-3 border border-purple-100">
-        <p className="text-xs font-semibold text-purple-700 mb-1">AI 선생님의 추천 이유</p>
+        <p className="text-xs font-semibold text-purple-700 mb-1">AI 부모님의 추천 이유</p>
         <p className="text-sm text-gray-600 leading-relaxed">
           {recommendation.reason}
         </p>

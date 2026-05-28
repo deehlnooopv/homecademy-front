@@ -58,7 +58,7 @@ export function HeroSection() {
             {greeting}, 김부모님 👋
           </h1>
           <p className="text-muted-foreground text-sm">
-            오늘도 아이들의 재능을 발견하는 여정을 함께해요
+            오늘도 아이들의 재능을 찾아주는 여정을 함께해요
           </p>
         </div>
 

@@ -138,7 +138,7 @@ export function SubjectLearningCard({ card }: SubjectLearningCardProps) {
         <div className="bg-gradient-to-r from-violet-50 to-purple-50 rounded-xl p-3.5 border border-violet-100">
           <p className="text-xs font-bold text-violet-700 flex items-center gap-1.5 mb-2">
             <span>🤖</span>
-            AI 선생님의 다음 수업 계획
+            AI 부모님의 다음 수업 계획
           </p>
           <p className="text-xs text-violet-600/90 leading-relaxed">{card.nextFocusPoints}</p>
         </div>

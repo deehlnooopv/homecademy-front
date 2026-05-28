@@ -18,8 +18,8 @@ export function LandingFooter() {
           <div className="md:col-span-2 space-y-4">
             <Logo size="md" />
             <p className="text-sm leading-relaxed max-w-xs">
-              부모님이 교육 리더가 되어 AI 선생님들을 배치하는 새로운 방식의 홈스쿨링 플랫폼입니다.
-              아이의 재능을 게임처럼 발견하세요.
+              부모님이 교육 리더가 되어 AI 부모님들을 배치하는 새로운 방식의 홈스쿨링 플랫폼입니다.
+              아이의 재능을 게임처럼 찾아주세요.
             </p>
             <p className="text-xs text-white/30">
               © 2025 홈카데미. All rights reserved.
@@ -30,7 +30,7 @@ export function LandingFooter() {
           <div className="space-y-4">
             <h4 className="text-white font-semibold text-sm">서비스</h4>
             <ul className="space-y-2.5 text-sm">
-              {['AI 재능 분석', 'AI 선생님 매칭', '성장 리포트', '학습 커리큘럼'].map((item) => (
+              {['AI 재능 분석', 'AI 부모님 매칭', '성장 리포트', '학습 커리큘럼'].map((item) => (
                 <li key={item}>
                   <Link href="#" className="hover:text-white transition-colors">{item}</Link>
                 </li>

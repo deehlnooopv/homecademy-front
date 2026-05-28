@@ -22,8 +22,8 @@ const STEPS = [
   {
     step: '03',
     emoji: '🤖',
-    title: 'AI 선생님 배치',
-    description: '부모님이 교육 리더로서 AI 선생님들을 원하는 과목에 배치하세요. 수학, 국어, 영어, 코딩 등 전문 AI 교사가 준비되어 있습니다.',
+    title: 'AI 부모님 배치',
+    description: '부모님이 교육 리더로서 AI 부모님들을 원하는 과목에 배치하세요. 수학, 국어, 영어, 코딩 등 전문 AI 교사가 준비되어 있습니다.',
     gradient: 'from-blue-400 to-indigo-600',
   },
   {

@@ -8,7 +8,7 @@ import { ArrowRight, Sparkles, Play } from 'lucide-react';
 /**
  * 랜딩 페이지 히어로 섹션 컴포넌트
  * - 서비스 핵심 가치 제안(Value Proposition) 전달
- * - 부모가 교육 리더가 되어 AI 선생님을 배치하는 개념 강조
+ * - 부모가 교육 리더가 되어 AI 부모님을 배치하는 개념 강조
  * - CTA 버튼 2개: 무료 시작하기, 서비스 소개 영상
  */
 export function LandingHero() {
@@ -47,10 +47,10 @@ export function LandingHero() {
               <span className="bg-gradient-to-r from-[#FF6B35] via-amber-400 to-[#FF6B35] bg-clip-text text-transparent">
                 게임처럼
               </span>{' '}
-              발견하세요
+              찾아주세요
             </h1>
             <p className="text-xl md:text-2xl text-white/70 font-medium leading-relaxed max-w-2xl mx-auto">
-              부모님이 교육 리더가 되어 AI 선생님들을 직접 배치하세요.
+              부모님이 교육 리더가 되어 AI 부모님들을 직접 배치하세요.
               <br className="hidden md:block" />
               홈카데미가 아이의 숨겨진 재능을 함께 찾아드립니다.
             </p>
@@ -84,7 +84,7 @@ export function LandingHero() {
               { num: '12,000+', label: '가입 가족' },
               { num: '98%', label: '만족도' },
               { num: '6가지', label: '재능 분석' },
-              { num: '24/7', label: 'AI 선생님' },
+              { num: '24/7', label: 'AI 부모님' },
             ].map(({ num, label }) => (
               <div key={label} className="text-center">
                 <p className="text-2xl font-extrabold text-white">{num}</p>
@@ -119,7 +119,7 @@ export function LandingHero() {
 
           {/* 오른쪽 카드 */}
           <div className="absolute right-8 top-1/3 bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/15 w-52 animate-float-delay">
-            <p className="text-white/60 text-[10px] mb-1">🤖 AI 선생님 분석</p>
+            <p className="text-white/60 text-[10px] mb-1">🤖 AI 부모님 분석</p>
             <p className="text-white text-xs font-semibold leading-relaxed">
               수학적 사고력이 또래보다 높아요! 코딩 과목을 추천드려요 🎯
             </p>

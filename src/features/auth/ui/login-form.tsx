@@ -89,7 +89,7 @@ export function LoginForm() {
           {[
             { value: '2,400+', label: '가입 가정' },
             { value: '98%', label: '만족도' },
-            { value: '15+', label: 'AI 선생님' },
+            { value: '15+', label: 'AI 부모님' },
           ].map(({ value, label }) => (
             <div key={label} className="text-center">
               <p className="text-2xl font-extrabold text-white">{value}</p>

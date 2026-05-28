@@ -7,6 +7,8 @@ import { Logo } from "@/src/shared/ui/logo";
 import { Button } from "@/src/shared/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/src/shared/ui/sheet";
 import { Menu, Bell, User, LogOut, Settings, Users, ChevronDown } from "lucide-react";
+import { NotificationCenter } from "@/src/features/notifications";
+import { Popover, PopoverContent, PopoverTrigger } from "@/src/shared/ui/popover";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -65,10 +67,17 @@ export function Header() {
         {/* 우측 액션 영역 */}
         <div className="flex items-center gap-2">
           {/* 알림 버튼 */}
-          <Button variant="ghost" size="icon" className="relative rounded-xl h-9 w-9">
-            <Bell className="h-4 w-4" />
-            <span className="absolute top-1.5 right-1.5 h-2 w-2 rounded-full bg-primary" />
-          </Button>
+          <Popover>
+            <PopoverTrigger asChild>
+              <Button variant="ghost" size="icon" className="relative rounded-xl h-9 w-9">
+                <Bell className="h-4 w-4" />
+                <span className="absolute top-1.5 right-1.5 h-2 w-2 rounded-full bg-primary" />
+              </Button>
+            </PopoverTrigger>
+            <PopoverContent className="w-auto p-0 border-0 bg-transparent shadow-none" align="end" sideOffset={8}>
+              <NotificationCenter />
+            </PopoverContent>
+          </Popover>
 
           {/* 사용자 드롭다운 (데스크탑) */}
           <div className="hidden md:block">
