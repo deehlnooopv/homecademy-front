@@ -1,7 +1,6 @@
 "use client";
 
-import { Sparkles, ArrowLeft, RefreshCw } from "lucide-react";
-import Link from "next/link";
+import { Sparkles, RefreshCw } from "lucide-react";
 import { Button } from "@/src/shared/ui/button";
 import { AIReportSummaryCard } from "@/src/entities/child";
 import { AI_REPORT_MOCK_DATA } from "@/src/entities/child";
@@ -18,23 +17,8 @@ const CHILD_GRADIENTS: Record<string, string> = {
  */
 export function AIReportListView() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="bg-background">
       <div className="container max-w-3xl mx-auto px-4 py-6 space-y-6">
-        {/* 뒤로가기 */}
-        <div>
-          <Button
-            variant="ghost"
-            size="sm"
-            asChild
-            className="text-muted-foreground hover:text-foreground -ml-2"
-          >
-            <Link href="/dashboard" className="flex items-center gap-1.5">
-              <ArrowLeft className="w-4 h-4" />
-              대시보드로
-            </Link>
-          </Button>
-        </div>
-
         {/* 페이지 헤더 */}
         <div className="space-y-2">
           <div className="flex items-center gap-2">

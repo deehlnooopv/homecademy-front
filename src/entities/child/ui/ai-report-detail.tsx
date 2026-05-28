@@ -15,14 +15,11 @@ import {
   Music,
   Calculator,
   ChevronRight,
-  ArrowLeft,
   Target,
   Heart,
 } from "lucide-react";
-import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/src/shared/ui/card";
 import { Badge } from "@/src/shared/ui/badge";
-import { Button } from "@/src/shared/ui/button";
 import { Progress } from "@/src/shared/ui/progress";
 import { Separator } from "@/src/shared/ui/separator";
 import { HexagonSkillChart } from "./hexagon-skill-chart";
@@ -403,18 +400,8 @@ export function AIReportDetail({ report, gradient }: AIReportDetailProps) {
   });
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="bg-background">
       <div className="container max-w-3xl mx-auto px-4 py-6 space-y-6">
-        {/* 뒤로가기 */}
-        <div>
-          <Button variant="ghost" size="sm" asChild className="text-muted-foreground hover:text-foreground -ml-2">
-            <Link href="/dashboard/ai-report" className="flex items-center gap-1.5">
-              <ArrowLeft className="w-4 h-4" />
-              AI 분석 목록으로
-            </Link>
-          </Button>
-        </div>
-
         {/* 리포트 헤더 */}
         <div
           className={`relative overflow-hidden rounded-2xl bg-gradient-to-br ${gradient} p-6 text-white shadow-lg`}

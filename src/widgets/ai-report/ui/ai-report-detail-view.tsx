@@ -22,7 +22,7 @@ export function AIReportDetailView({ childId }: AIReportDetailViewProps) {
 
   if (!report) {
     return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
+      <div className="bg-background flex items-center justify-center py-20">
         <div className="text-center space-y-2">
           <p className="text-lg font-bold text-foreground">리포트를 찾을 수 없습니다.</p>
           <p className="text-sm text-muted-foreground">해당 자녀의 분석 데이터가 아직 준비되지 않았습니다.</p>

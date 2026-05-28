@@ -113,7 +113,7 @@ function ChildProfileHeader({ child }: { child: ChildDetail }) {
  */
 export function ChildDetailView({ child, onNavigateToCourse }: ChildDetailViewProps) {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="bg-background">
       <div className="container max-w-5xl mx-auto px-4 py-6 space-y-8">
         <ChildProfileHeader child={child} />
 
@@ -137,6 +137,7 @@ export function ChildDetailView({ child, onNavigateToCourse }: ChildDetailViewPr
               {child.subjects.length}개 과목
             </Badge>
           </div>
+          <p className="text-xs text-muted-foreground -mt-1">각 과목 카드를 클릭하면 AI 분석 내용을 확인할 수 있어요.</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {child.subjects.map((subject) => (
               <SubjectLearningCard key={subject.subject} card={subject} />
