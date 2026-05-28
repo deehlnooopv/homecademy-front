@@ -381,75 +381,20 @@ function NextStepsSection({ report }: NextStepsProps) {
 
 interface AIReportDetailProps {
   report: AIAnalysisReport;
-  gradient: string;
+  gradient?: string;
 }
 
 /**
- * AI 성장 분석 상세 리포트 컴포넌트
+ * AI 성장 분석 상세 리폤트 컴포넌트
  * - 재능 발견 강조 (에피소드 기반)
- * - 과정 중심 데이터 (끈기, 사고 시간)
+ * - 과정 중심 데이터 (끊기, 사고 시간)
  * - 성장 타임라인 (자기 자신과 비교)
  * - 부모 대화 가이드
  * - 다음 단계 추천
  */
-export function AIReportDetail({ report, gradient }: AIReportDetailProps) {
-  const generatedDate = new Date(report.generatedAt).toLocaleDateString("ko-KR", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-
+export function AIReportDetail({ report }: AIReportDetailProps) {
   return (
-    <div className="bg-background">
-      <div className="container max-w-3xl mx-auto px-4 py-6 space-y-6">
-        {/* 리포트 헤더 */}
-        <div
-          className={`relative overflow-hidden rounded-2xl bg-gradient-to-br ${gradient} p-6 text-white shadow-lg`}
-        >
-          <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/3" />
-          <div className="relative z-10">
-            <div className="flex items-start justify-between">
-              <div>
-                <div className="flex items-center gap-2 mb-2">
-                  <Sparkles className="w-5 h-5 text-white/90" />
-                  <span className="text-white/90 text-sm font-semibold">AI 성장 분석 리포트</span>
-                </div>
-                <h1 className="text-3xl font-extrabold mb-1">{report.childName}</h1>
-                <p className="text-white/80 text-sm">{report.childAge}세 · {generatedDate} 기준</p>
-              </div>
-              <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-4 text-center border border-white/20">
-                <p className="text-3xl font-extrabold">+{report.achievementChange}%</p>
-                <p className="text-white/80 text-xs mt-0.5">이번 주 성장</p>
-              </div>
-            </div>
-
-            <div className="mt-4 bg-white/15 backdrop-blur-sm rounded-xl p-3 border border-white/20">
-              <p className="text-sm text-white/95 leading-relaxed">{report.summary}</p>
-            </div>
-
-            {/* 이번 주 통계 */}
-            <div className="grid grid-cols-3 gap-3 mt-4">
-              <div className="bg-white/15 rounded-xl p-3 text-center">
-                <Clock className="w-4 h-4 text-white/80 mx-auto mb-1" />
-                <p className="text-lg font-extrabold">
-                  {Math.floor(report.weeklyStudyMinutes / 60)}h {report.weeklyStudyMinutes % 60}m
-                </p>
-                <p className="text-white/70 text-[10px]">학습 시간</p>
-              </div>
-              <div className="bg-white/15 rounded-xl p-3 text-center">
-                <CheckCircle2 className="w-4 h-4 text-white/80 mx-auto mb-1" />
-                <p className="text-lg font-extrabold">{report.completedTasks}개</p>
-                <p className="text-white/70 text-[10px]">완료 과제</p>
-              </div>
-              <div className="bg-white/15 rounded-xl p-3 text-center">
-                <Trophy className="w-4 h-4 text-white/80 mx-auto mb-1" />
-                <p className="text-lg font-extrabold">{report.talents.length}개</p>
-                <p className="text-white/70 text-[10px]">발견된 재능</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
+    <div className="space-y-6">
         {/* 재능 발견 섹션 */}
         <section className="space-y-4">
           <div className="flex items-center gap-2">
@@ -507,7 +452,6 @@ export function AIReportDetail({ report, gradient }: AIReportDetailProps) {
             AI가 분석한 {report.childName}만의 성장 스토리
           </p>
         </div>
-      </div>
     </div>
   );
 }

@@ -145,7 +145,7 @@ export function AIReportSummaryCard({ report, gradient }: AIReportSummaryCardPro
           </div>
         </div>
 
-        {/* 상세보기 버튼 */}
+        {/* 상세보기 버튼 - 자녀 학습 요약 페이지로 이동 */}
         <Button
           variant="ghost"
           size="sm"
@@ -153,11 +153,11 @@ export function AIReportSummaryCard({ report, gradient }: AIReportSummaryCardPro
           className="w-full h-8 text-xs text-primary hover:text-primary hover:bg-primary/5 border border-primary/20 hover:border-primary/40 transition-all"
         >
           <Link
-            href={`/dashboard/ai-report/${report.childId}`}
+            href={`/dashboard/children/${report.childId}`}
             className="flex items-center justify-center gap-1"
           >
-            <Sparkles className="w-3.5 h-3.5" />
-            상세 리포트 보기
+            <Zap className="w-3.5 h-3.5" />
+            학습 요약 보기
             <ChevronRight className="w-3.5 h-3.5" />
           </Link>
         </Button>

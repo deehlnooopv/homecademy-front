@@ -28,9 +28,9 @@ const STEPS = [
   },
   {
     step: '04',
-    emoji: '🚀',
-    title: '게임처럼 성장하기',
-    description: '레벨업과 배지를 모으며 아이가 즐겁게 학습합니다. 부모님은 실시간 성장 리포트로 아이의 발전을 함께 지켜보세요.',
+    emoji: '🌱',
+    title: '지속적인 성장 확인',
+    description: '단계별 달성과 성취를 철저히 기록하며 아이가 스스로 성장합니다. 부모님은 실시간 성장 리포트로 아이의 발전을 함께 지켜보세요.',
     gradient: 'from-emerald-400 to-teal-600',
   },
 ] as const;
