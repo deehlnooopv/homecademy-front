@@ -2,10 +2,10 @@
  * 인증 관련 텍스트 상수
  */
 export const AUTH_TEXT = {
-  headline: '아이의 재능을 발견하는\n가장 스마트한 방법',
-  subheadline: 'AI 선생님이 분석하고, 부모님이 이끄는\n맞춤형 홈 러닝 플랫폼',
+  headline: '아이의 재능을 찾아주는\n가장 스마트한 방법',
+  subheadline: 'AI 부모님이 분석하고, 부모님이 이끄는\n맞춤형 홈 러닝 플랫폼',
   childCodeLogin: '자녀 코드로 로그인',
-  childCodeDesc: '선생님에게 받은 코드로 입장',
+  childCodeDesc: '부모님에게 받은 코드로 입장',
   or: '또는',
   socialLogin: '소셜 계정으로 시작하기',
   terms: '로그인하면 이용약관 및 개인정보처리방침에 동의합니다',

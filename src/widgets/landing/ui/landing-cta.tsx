@@ -31,7 +31,7 @@ export function LandingCTA() {
             지금 바로 시작하세요
           </h2>
           <p className="text-xl text-white/70 max-w-2xl mx-auto leading-relaxed">
-            아이의 숨겨진 재능을 발견하는 여정,
+            아이의 숨겨진 재능을 찾아주는 여정,
             <br />
             홈카데미와 함께라면 더 즐겁고 효과적입니다.
           </p>

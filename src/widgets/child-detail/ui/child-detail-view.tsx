@@ -236,7 +236,7 @@ export function ChildDetailView({ child, onNavigateToCourse }: ChildDetailViewPr
                   <Sparkles className="w-4 h-4 text-accent" />
                 </div>
                 <div>
-                  <h2 className="text-xl font-extrabold text-foreground">미래 학습 가이드</h2>
+                  <h2 className="text-xl font-extrabold text-foreground">AI 부모님 추천 가이드</h2>
                   <p className="text-xs text-muted-foreground mt-0.5">
                     {child.name}의 현재 역량과 성향을 바탕으로 AI가 추천하는 다음 단계입니다.
                   </p>
